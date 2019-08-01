@@ -11,9 +11,7 @@
       <div id="visuals">
         <div class="floor"></div>
         <div id="box">
-          <form method="POST" id="box-form">
             <input type="text">
-          </form>
         </div>
         
       </div>
@@ -24,16 +22,14 @@
     </div>
 
     <script>
-      const boxForm = document.getElementById('box-form');
-      boxForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        let userInput = document.querySelector('#box-form input').value;
-        if(userInput.toLowerCase() === 'ribbit') {
-          window.location.href = '/treasure.html';
-        } else if (userInput.toLowerCase() === 'socialism') {
-          window.location.href = '/wrongbutok.html'
-        } else {   
-         boxForm.reset();
+      document.addEventListener('keydown', function(event) {
+        let userInput = document.querySelector('input').value;
+        if(event.key === 'Enter') {
+          if(userInput.toLowerCase() === 'ribbit') {
+            window.location.href = '/treasure.html';
+          } else if (userInput.toLowerCase() === 'socialism') {
+            window.location.href = '/wrongbutok.html'
+          } 
         }
       });
     </script>
