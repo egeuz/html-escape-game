@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THE ROOM WITH DOORS</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="visuals">
+        <div class="floor"></div>
+        <div id="box">
+          <form id="box-form">
+            <input type="text">
+          </form>
+        </div>
+        
+      </div>
+      <div id="text">
+        <p>Inside this room is a <b>BOX.</b> It feels like this is the only thing that yet exists in this stretchless expanse of a room. It occurs to you that the <b>BOX</b> has a <b>THING</b> you can <b>WRITE</b> on. It also occurs to you that the box can be unlocked by writing the <b>CORRECT THING.</b> And then pressing... <b>ENTER?</b></p>
+        <a href="index.html" class="intext-link"><b><-- GO BACK<b></a>
+      </div>
+    </div>
+
+    <script>
+      const boxForm = document.getElementById('box-form');
+      boxForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        let userInput = document.querySelector('#box-form input').value;
+        if(userInput.toLowerCase() === 'ribbit') {
+          window.location.href = '/treasure.html';
+        } else if (userInput.toLowerCase() === 'socialism') {
+          window.location.href = '/wrongbutok.html'
+        } else {   
+         boxForm.reset();
+        }
+      });
+    </script>
+  </body>
+</html>
